@@ -97,8 +97,8 @@ const config = {
   singleQuote: true,
   semi: true,
   tabWidth: 2,
-  trailingComma: "es5",
-  plugins: ["prettier-plugin-tailwindcss"],
+  trailingComma: 'es5',
+  plugins: ['prettier-plugin-tailwindcss'],
 };
 
 module.exports = config;
@@ -146,14 +146,14 @@ Expected: packages appear in `package.json` devDependencies.
 - [ ] **Step 2: Create `jest.config.ts`**
 
 ```ts
-import type { Config } from "jest";
-import nextJest from "next/jest.js";
+import type { Config } from 'jest';
+import nextJest from 'next/jest.js';
 
-const createJestConfig = nextJest({ dir: "./" });
+const createJestConfig = nextJest({ dir: './' });
 
 const config: Config = {
-  testEnvironment: "jsdom",
-  testMatch: ["**/__tests__/**/*.test.ts", "**/__tests__/**/*.test.tsx"],
+  testEnvironment: 'jsdom',
+  testMatch: ['**/__tests__/**/*.test.ts', '**/__tests__/**/*.test.tsx'],
 };
 
 export default createJestConfig(config);
@@ -175,8 +175,8 @@ In the `"scripts"` section, add:
 Create `src/lib/__tests__/example.test.ts`:
 
 ```ts
-describe("example", () => {
-  it("placeholder passes", () => {
+describe('example', () => {
+  it('placeholder passes', () => {
     expect(1 + 1).toBe(2);
   });
 });
@@ -214,7 +214,7 @@ cd /Users/shira/Projects/app-skeleton && git add -A && git commit -m "chore: con
 - [ ] **Step 1: Replace `src/app/page.tsx` with an empty shell**
 
 ```tsx
-"use client";
+'use client';
 
 export default function Home() {
   return (
@@ -351,7 +351,7 @@ This is a timed take-home coding interview (typically 2 hours). The goal is work
 **3. Fetch caching** — Next.js 15 caches `fetch()` by default. For calls that must always be fresh:
 
 ```ts
-fetch(url, { cache: "no-store" });
+fetch(url, { cache: 'no-store' });
 ```
 ````
 

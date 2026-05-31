@@ -105,7 +105,7 @@ DATABASE_URL=./db/app.db
 ## Tooling
 
 | Tool           | Purpose                        |
-|----------------|--------------------------------|
+| -------------- | ------------------------------ |
 | Next.js 15     | App Router, API routes, SSR    |
 | Tailwind CSS   | Utility-first styling          |
 | Prettier       | Consistent formatting          |
