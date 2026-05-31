@@ -1,5 +1,9 @@
 @AGENTS.md
 
+## Skill Usage
+
+Before invoking any superpowers skill, ask the user for approval first. Do not auto-trigger skills.
+
 ## Code Style Guidelines
 
 ### Mandatory Code Standards
@@ -89,7 +93,7 @@ export async function GET(req: Request): Promise<Response> {
 6. Wire up the UI component
 7. Verify in the browser
 8. update readme and the plan.mp files with the progress
-8. Commit: `git commit -m "feat: [feature name]"`
+9. Commit: `git commit -m "feat: [feature name]"`
 
 ### Code Quality Checklist (before submitting)
 
@@ -106,15 +110,15 @@ export async function GET(req: Request): Promise<Response> {
 **2. Importing a Server Component into a Client Component** — breaks at runtime. Pass server content as `children` instead.
 
 **3. Fetch caching** — Next.js may cache `fetch()` calls. For calls that must be fresh:
+
 ```ts
 fetch(url, { cache: 'no-store' });
 ```
 
 ### What should be kept
 
-| Dimension | What to check for                                                                                 |
-|-----------|---------------------------------------------------------------------------------------------------|
-| **It works** | All features run on a fresh clone; error states handled                                           |
+| Dimension        | What to check for                                                                                 |
+| ---------------- | ------------------------------------------------------------------------------------------------- |
+| **It works**     | All features run on a fresh clone; error states handled                                           |
 | **Architecture** | Clear FE / API / lib separation; intentional choices                                              |
 | **Code quality** | Keeping each method concise, clear, readable, doing one thing, aligns with clean code guidelines. |
-
