@@ -1,17 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# [App Name]
 
-## Getting Started
+## How to run locally
 
-First, run the development server:
+1. Clone the repo
+2. Install dependencies: `npm install`
+3. Start the dev server: `npm run dev`
+4. Open `http://localhost:3000`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+> If the app requires API keys or secrets, copy `.env.example` to `.env.local` and fill in the values before running.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Assumptions
+
+- [List any assumptions you made about the brief here]
+
+## What I'd improve with more time
+
+- [List the first things you'd change and why]
