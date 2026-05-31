@@ -11,7 +11,7 @@ const config: Config = {
     '**/src/components/**/*.test.tsx',
     '**/src/components/**/*.test.ts',
   ],
-  setupFilesAfterEnv: ['@testing-library/jest-dom'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 };
 
 export default createJestConfig(config);
