@@ -110,9 +110,9 @@ export async function GET(req: Request): Promise<Response> {
 fetch(url, { cache: 'no-store' });
 ```
 
-### What should be be kept
+### What should be kept
 
-| Dimension | What they look for                                                                                |
+| Dimension | What to check for                                                                                 |
 |-----------|---------------------------------------------------------------------------------------------------|
 | **It works** | All features run on a fresh clone; error states handled                                           |
 | **Architecture** | Clear FE / API / lib separation; intentional choices                                              |
