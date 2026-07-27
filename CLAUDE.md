@@ -24,6 +24,7 @@ Before invoking any superpowers skill, ask the user for approval first. Do not a
 
 ### Testing
 
+- Test files live **next to their implementation file** — `foo.ts` → `foo.test.ts` (no `__tests__` subdirectories)
 - Each component has a dedicated test file
 - Use `data-testid` for element selection in tests
 - Store test IDs and content in constants file
@@ -37,12 +38,12 @@ Before invoking any superpowers skill, ask the user for approval first. Do not a
 
 - **Prettier** is configured for automatic code formatting
 - Configuration (`.prettierrc`):
-    - Single quotes for strings (`singleQuote: true`)
-    - Semicolons required (`semi: true`)
-    - Tab width: 2 spaces
-    - Print width: 100 characters
-    - Trailing commas: ES5 style
-    - Arrow function parentheses: always
+  - Single quotes for strings (`singleQuote: true`)
+  - Semicolons required (`semi: true`)
+  - Tab width: 2 spaces
+  - Print width: 100 characters
+  - Trailing commas: ES5 style
+  - Arrow function parentheses: always
 - Integrated with ESLint via `eslint-plugin-prettier`
 - Formatting happens automatically when running `npm run lint`
 - ESLint will both check and fix code style and formatting issues
@@ -78,13 +79,13 @@ API routes should only: validate input → call a `src/lib` function → return 
 
 ```ts
 // src/app/api/search/route.ts
-import {searchMovies} from '@/lib/movies';
+import { searchMovies } from '@/lib/movies';
 
 export async function GET(req: Request): Promise<Response> {
-    const {searchParams} = new URL(req.url);
-    const query = searchParams.get('q') ?? '';
-    const results = await searchMovies(query);
-    return Response.json(results);
+  const { searchParams } = new URL(req.url);
+  const query = searchParams.get('q') ?? '';
+  const results = await searchMovies(query);
+  return Response.json(results);
 }
 ```
 
@@ -101,7 +102,7 @@ export async function GET(req: Request): Promise<Response> {
 
 ### Step-by-Step Workflow (one feature at a time)
 
-1. Write a Jest test for the core logic in `src/lib/__tests__/`
+1. Write a Jest test co-located with the implementation file (`src/lib/foo.test.ts` next to `src/lib/foo.ts`)
 2. Run `npm test` — confirm it **fails**
 3. Implement minimal code in `src/lib/` to make it pass
 4. Run `npm test` — confirm it **passes**
@@ -120,7 +121,7 @@ export async function GET(req: Request): Promise<Response> {
 - [ ] No .gitkeep files, delete unused files.
 - [ ] `npm run dev` works on a fresh clone
 - [ ] If the brief requires API keys: stored in `.env.local` (never committed), `.env.example` has key names with empty
-  values
+      values
 
 ### Next.js 16 Pitfalls
 
@@ -133,13 +134,13 @@ instead.
 **3. Fetch caching** — Next.js may cache `fetch()` calls. For calls that must be fresh:
 
 ```ts
-fetch(url, {cache: 'no-store'});
+fetch(url, { cache: 'no-store' });
 ```
 
 ### What should be kept
 
 | Dimension        | What to check for                                                                                 |
-|------------------|---------------------------------------------------------------------------------------------------|
+| ---------------- | ------------------------------------------------------------------------------------------------- |
 | **It works**     | All features run on a fresh clone; error states handled                                           |
 | **Architecture** | Clear FE / API / lib separation; intentional choices                                              |
 | **Code quality** | Keeping each method concise, clear, readable, doing one thing, aligns with clean code guidelines. |
